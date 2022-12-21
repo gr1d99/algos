@@ -1,0 +1,28 @@
+{
+  "name": "algos-js",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest --verbose false"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gr1d99/algos.git"
+  },
+  "keywords": [
+    "algorithms"
+  ],
+  "author": "Gideon Kimutai",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/gr1d99/algos/issues"
+  },
+  "homepage": "https://github.com/gr1d99/algos#readme",
+  "devDependencies": {
+    "@jest/globals": "^29.3.1",
+    "jest": "^29.3.1",
+    "ts-jest": "^29.0.3",
+    "ts-node": "^10.9.1"
+  }
+}
