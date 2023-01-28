@@ -104,36 +104,42 @@
       <div id="method-c-call" class="method-detail ">
         <div class="method-heading">
           <span class="method-name">call</span><span
-            class="method-args">(result, *nums)</span>
+            class="method-args">(result, *nums, memo: {})</span>
           <span class="method-click-advice">click to toggle source</span>
         </div>
 
         <div class="method-description">
-          <p>call(7, 1, 2, 3, 4, 5) Params:</p>
+          <p>eg: <code>V2::CanSum#call(7, 1, 2, 3, 4, 5)</code></p>
+
+<p><code>Params</code>:</p>
 <dl class="rdoc-list note-list"><dt><code>result</code>
 <dd>
 <p>positive number</p>
 </dd><dt><code>nums</code>
 <dd>
 <p>comma separated integers</p>
+</dd><dt><code>memo</code>
+<dd>
+<p>optional, used internally</p>
 </dd></dl>
 
           <div class="method-source-code" id="call-source">
-            <pre><span class="ruby-comment"># File v2/can_sum.rb, line 14</span>
-<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">call</span>(<span class="ruby-identifier">result</span>, <span class="ruby-operator">*</span><span class="ruby-identifier">nums</span>)
+            <pre><span class="ruby-comment"># File v2/can_sum.rb, line 18</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">call</span>(<span class="ruby-identifier">result</span>, <span class="ruby-operator">*</span><span class="ruby-identifier">nums</span>, <span class="ruby-value">memo:</span> {})
+  <span class="ruby-keyword">return</span> <span class="ruby-identifier">memo</span>[<span class="ruby-identifier">result</span>] <span class="ruby-keyword">if</span> <span class="ruby-identifier">memo</span>.<span class="ruby-identifier">key?</span> <span class="ruby-identifier">result</span>
+
+  <span class="ruby-identifier">memo</span>[<span class="ruby-identifier">result</span>] = <span class="ruby-keyword">false</span>
+
   <span class="ruby-identifier">base_cases_result</span> = <span class="ruby-identifier">base_cases</span>(<span class="ruby-identifier">result</span>, <span class="ruby-identifier">nums</span>)
 
-  <span class="ruby-keyword">return</span> <span class="ruby-identifier">base_cases_result</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">base_cases_result</span>.<span class="ruby-identifier">nil?</span>
-
-  <span class="ruby-identifier">can_sum</span> = <span class="ruby-keyword">false</span>
-
-  <span class="ruby-identifier">nums</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">num</span><span class="ruby-operator">|</span>
-    <span class="ruby-identifier">can_sum</span> = <span class="ruby-identifier">call</span>(<span class="ruby-identifier">result</span> <span class="ruby-operator">-</span> <span class="ruby-identifier">num</span>, <span class="ruby-operator">*</span><span class="ruby-identifier">nums</span>)
-
-    <span class="ruby-keyword">break</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">can_sum</span>
+  <span class="ruby-keyword">unless</span> <span class="ruby-identifier">base_cases_result</span>.<span class="ruby-identifier">nil?</span>
+    <span class="ruby-identifier">memo</span>[<span class="ruby-identifier">result</span>] = <span class="ruby-identifier">base_cases_result</span>
+    <span class="ruby-keyword">return</span> <span class="ruby-identifier">base_cases_result</span>
   <span class="ruby-keyword">end</span>
 
-  <span class="ruby-identifier">can_sum</span>
+  <span class="ruby-identifier">_run</span>(<span class="ruby-identifier">result</span>, <span class="ruby-identifier">nums</span>, <span class="ruby-identifier">memo</span>)
+
+  <span class="ruby-identifier">memo</span>[<span class="ruby-identifier">result</span>]
 <span class="ruby-keyword">end</span></pre>
           </div>
         </div>

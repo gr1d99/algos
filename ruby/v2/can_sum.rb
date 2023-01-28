@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # This is V2 of can sum implementation
 
 module V2
@@ -7,34 +9,48 @@ module V2
   class CanSum
     class << self
       ##
-      # #call(7, 1, 2, 3, 4, 5)
+      # eg: <code>V2::CanSum#call(7, 1, 2, 3, 4, 5)</code>
       #
-      # Params::
+      # +Params+:
       # +result+:: positive number
       # +nums+:: comma separated integers
-      def call(result, *nums)
+      # +memo+:: optional, used internally
+      def call(result, *nums, memo: {})
+        return memo[result] if memo.key? result
+
+        memo[result] = false
+
         base_cases_result = base_cases(result, nums)
 
-        return base_cases_result unless base_cases_result.nil?
-
-        can_sum = false
-
-        nums.each do |num|
-          can_sum = call(result - num, *nums)
-
-          break if can_sum
+        unless base_cases_result.nil?
+          memo[result] = base_cases_result
+          return base_cases_result
         end
 
-        can_sum
+        _run(result, nums, memo)
+
+        memo[result]
       end
 
       private
 
-      def base_cases(result, nums)
-        return false if (nums.empty? || result < 0)
+      def _run(result, nums, memo)
+        nums.each do |num|
+          new_result = result - num
+          if call(new_result, *nums, memo: memo)
+            memo[result] = true
+            break
+          end
+        end
+      end
 
-        true if result === 0
+      def base_cases(result, nums)
+        return false if nums.empty? || result.negative?
+
+        true if result.zero?
       end
     end
   end
 end
+
+V2::CanSum.call(7, 1, 2, memo: {})

@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'minitest/autorun'
 require_relative '../helper'
 require_relative '../../v2/can_sum'
@@ -22,6 +24,10 @@ module V2
 
     def test_7_23
       assert CanSum.call 7, 2, 3
+    end
+
+    def test_300_7_14
+      refute CanSum.call 300, 7, 14
     end
   end
 end

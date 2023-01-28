@@ -113,7 +113,7 @@
           
 
           <div class="method-source-code" id="setup-source">
-            <pre><span class="ruby-comment"># File tests/test_palindrome.rb, line 6</span>
+            <pre><span class="ruby-comment"># File tests/test_palindrome.rb, line 8</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">setup</span>
   <span class="ruby-ivar">@palindrome</span> = <span class="ruby-constant">Palindrome</span>.<span class="ruby-identifier">new</span>
 <span class="ruby-keyword">end</span></pre>
@@ -134,7 +134,7 @@
           
 
           <div class="method-source-code" id="test_10-source">
-            <pre><span class="ruby-comment"># File tests/test_palindrome.rb, line 18</span>
+            <pre><span class="ruby-comment"># File tests/test_palindrome.rb, line 20</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">test_10</span>
   <span class="ruby-identifier">refute</span> <span class="ruby-ivar">@palindrome</span>.<span class="ruby-identifier">is_palindrome</span> <span class="ruby-value">10</span>
 <span class="ruby-keyword">end</span></pre>
@@ -155,7 +155,7 @@
           
 
           <div class="method-source-code" id="test_121-source">
-            <pre><span class="ruby-comment"># File tests/test_palindrome.rb, line 10</span>
+            <pre><span class="ruby-comment"># File tests/test_palindrome.rb, line 12</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">test_121</span>
   <span class="ruby-identifier">assert</span> <span class="ruby-ivar">@palindrome</span>.<span class="ruby-identifier">is_palindrome</span> <span class="ruby-value">121</span>
 <span class="ruby-keyword">end</span></pre>
@@ -176,9 +176,9 @@
           
 
           <div class="method-source-code" id="test_neg_121-source">
-            <pre><span class="ruby-comment"># File tests/test_palindrome.rb, line 14</span>
+            <pre><span class="ruby-comment"># File tests/test_palindrome.rb, line 16</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">test_neg_121</span>
-  <span class="ruby-identifier">refute</span> <span class="ruby-ivar">@palindrome</span>.<span class="ruby-identifier">is_palindrome</span> <span class="ruby-value">-121</span>
+  <span class="ruby-identifier">refute</span> <span class="ruby-ivar">@palindrome</span>.<span class="ruby-identifier">is_palindrome</span>(<span class="ruby-value">-121</span>)
 <span class="ruby-keyword">end</span></pre>
           </div>
         </div>

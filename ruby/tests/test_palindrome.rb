@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'minitest/autorun'
 require_relative './helper'
 require_relative '../palindrome'
@@ -12,7 +14,7 @@ class PalindromeTest < Minitest::Test
   end
 
   def test_neg_121
-    refute @palindrome.is_palindrome -121
+    refute @palindrome.is_palindrome(-121)
   end
 
   def test_10
