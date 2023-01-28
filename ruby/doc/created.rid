@@ -1,0 +1,11 @@
+Sat, 28 Jan 2023 11:30:53 +0300
+Gemfile	Sat, 28 Jan 2023 10:26:52 +0300
+Gemfile.lock	Sat, 28 Jan 2023 10:27:01 +0300
+Rakefile	Wed, 21 Dec 2022 06:05:09 +0300
+palindrome.rb	Wed, 21 Dec 2022 06:19:05 +0300
+tests/helper.rb	Wed, 21 Dec 2022 06:02:15 +0300
+tests/test_palindrome.rb	Wed, 21 Dec 2022 06:04:24 +0300
+tests/v1/test_can_sum.rb	Sat, 28 Jan 2023 11:16:49 +0300
+tests/v2/test_can_sum.rb	Sat, 28 Jan 2023 11:12:47 +0300
+v1/can_sum.rb	Sat, 28 Jan 2023 10:55:43 +0300
+v2/can_sum.rb	Sat, 28 Jan 2023 11:30:48 +0300
